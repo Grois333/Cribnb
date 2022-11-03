@@ -1,9 +1,10 @@
 Developed with:
  -Backend: Laravel 8, MSQL
  -PHP Version Required: 7.4
- -Scaffolding Frontend: Vue js, Bootstrapp
+ -Scaffolding Frontend: Vue js, Bootstrap
 
 
+Commands:
 
 Create Laravel Porject:
 composer create-project --prefer-dist laravel/laravel laravelbnb
