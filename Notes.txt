@@ -1,0 +1,179 @@
+Developed with:
+ -Backend: Laravel 8, MSQL
+ -PHP Version Required: 7.4
+ -Scaffolding Frontend: Vue js, Bootstrapp
+
+
+
+Create Laravel Porject:
+composer create-project --prefer-dist laravel/laravel laravelbnb
+
+
+Start Server:
+php artisan serve
+
+
+Install Laravel UI:
+composer require laravel/ui --dev
+
+
+Generate Scaffolding Frontend:
+// Generate basic scaffolding...
+php artisan ui bootstrap
+php artisan ui vue
+php artisan ui react
+
+
+
+Install required JS libraries:
+npm install
+
+Bundle all stylsheets and libraries into single files for our Frontend page:
+npm run dev
+
+(Note): If npm run dev has error, delete node modules folder, do npm install
+and then npm run dev, will fix the issue.
+
+
+Install Vue Router:
+npm install vue-router
+
+
+Vue Watcher:
+npm run watch
+
+
+
+
+DATABASE:
+
+A Model Class Represents a Database Table
+
+Defining Models(m for making migrations): 
+php artisan make:model Bookable -m
+php artisan make:model Booking -m
+php artisan make:model Review -m
+php artisan make:model Address -m
+
+Create Migration in DB:
+php artisan migrate
+
+
+Fake Data:
+
+Installe Lagacy Factory for new Laravel Versions:
+composer require laravel/legacy-factories
+
+Create Factory:
+php artisan make:factory BookableFactory --model=Bookable
+php artisan make:factory BookingFactory
+php artisan make:factory ReviewFactory
+
+Generate a Database Seeder:
+php artisan make:seeder BookablesTableSeeder
+php artisan make:seeder BookingsTableSeeder
+php artisan make:seeder ReviewsTableSeeder
+php artisan make:seeder UsersTableSeeder
+
+Run Seed (adds new data un top of exsiting data, mostly for production):
+php artisan db:seed
+
+Migrations:
+php artisan make:migration addReviewKeyToBookingsTable
+php artisan make:migration addPriceToBookablesTable
+php artisan make:migration addPriceAndAdressToBookingsTable
+
+Refresh the DB and run all database seeds (run this only on development):
+php artisan migrate:refresh --seed
+
+
+
+
+API:
+
+Get all API's:
+php artisan route:list
+
+Check data in url:
+http://localhost:8000/api/bookables
+
+
+Create Controllers (Groups Http Request of the same type):
+php artisan make:controller Api/BookableController
+php artisan make:controller Api/BookableAvailabilityController --invokable
+php artisan make:controller Api/BookableReviewController --invokable
+php artisan make:controller Api/ReviewController
+php artisan make:controller Api/BookingByReviewController --invokable
+php artisan make:controller Api/BookablePriceController --invokable
+php artisan make:controller Api/CheckoutController --invokable
+
+(Controllers need to be referenced by Route in api.php)
+http://localhost:8000/api/bookables/1/availability
+http://localhost:8000/api/bookables/1/availability?from=2022-08-01&to=2022-08-24
+
+
+Create Resources for fetching specific data:
+php artisan make:resource BookableIndexResource
+php artisan make:resource BookableShowResource
+php artisan make:resource BookableReviewIndexResource
+php artisan make:resource ReviewResource
+php artisan make:resource BookingByReviewShowResource
+php artisan make:resource BookingByReviewBookableShowResource
+
+
+
+Laravel Debugger:
+composer require barryvdh/laravel-debugbar --dev
+
+
+Moment Js:
+https://momentjs.com/
+npm install moment --save 
+
+Fontawesome:
+npm install --save-dev @fortawesome/fontawesome-free
+
+
+
+Global State:
+Installing VUEX:
+
+npm install vuex --save
+
+
+User Authentication:
+
+//install
+composer require laravel/sanctum
+
+//vendor
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+
+php artisan migrate
+
+//Generate Auth Folder
+php artisan ui:auth
+
+
+
+
+Deploy for Production:
+
+npm run production
+
+Apply changes to .env file:
+APP_ENV=production
+APP_DEBUG=false
+
+change required db connection credentials
+
+In hosting Whats inside  public folder goes to public_html or htdocs, the res goes to the root in laravel folder
+Make the connection:
+public/index.php
+require __DIR__.'/../laravel/vendor/autoload.php';
+$app = require_once __DIR__.'/../laravel/bootstrap/app.php';
+
+
+How to deploy: https://www.youtube.com/watch?v=GQknBIMk_40&list=PLJieq08ITki_1q3R1i4pJ6g7mm5vQ_RVJ&index=3
+
+
