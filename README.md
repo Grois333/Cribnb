@@ -3,23 +3,76 @@
 ### Link to App: https://cribnb.000webhostapp.com/
 
 #### Developed with:
- #### Backend: Laravel 8, MSQL
+ #### Backend: Laravel 8, MYSQL
  #### PHP Version Required: 7.4
- #### Scaffolding Frontend: Vue.js, Bootstrap
+ #### Scaffolding Frontend: Vue.js (Vue Router, Vuex), Bootstrap
 
-![Main]()
+![Main](https://raw.githubusercontent.com/Grois333/Cribnb/master/git%20images/landing%20page.png)
 
 
-### Home:
+### Register:
 
-![Home]()
+![Register](https://raw.githubusercontent.com/Grois333/Cribnb/master/git%20images/register.png)
+
+
+### Sign In:
+
+![Sign In](https://raw.githubusercontent.com/Grois333/Cribnb/master/git%20images/sign%20in.png)
+
+
+### Booking:
+
+![Booking](https://raw.githubusercontent.com/Grois333/Cribnb/master/git%20images/booking.png)
+
+
+### Booking not available:
+
+![Booking not available](https://raw.githubusercontent.com/Grois333/Cribnb/master/git%20images/booking%20not%20available.png)
+
+
+### Booking available:
+
+![Booking available](https://raw.githubusercontent.com/Grois333/Cribnb/master/git%20images/booking%20available.png)
+
+
+### Basket:
+
+![Basket](https://github.com/Grois333/Cribnb/blob/master/git%20images/basket.png)
+
+
+### Succes:
+
+![Succes](https://raw.githubusercontent.com/Grois333/Cribnb/master/git%20images/success.png)
+
+
+### Review:
+
+![Review](https://raw.githubusercontent.com/Grois333/Cribnb/master/git%20images/review.png)
+
+
+### Rating:
+
+![Rating](https://raw.githubusercontent.com/Grois333/Cribnb/master/git%20images/rating.png)
+
+
+### Bookings in DB:
+
+![Bookings in DB](https://raw.githubusercontent.com/Grois333/Cribnb/master/git%20images/bookings%20in%20db.png)
+
+
+### API Bookables:
+
+![API Bookables](https://raw.githubusercontent.com/Grois333/Cribnb/master/git%20images/api%20bookables.png)
+
+https://cribnb.000webhostapp.com/api/bookables
+
 
 
 
 ### Commands:
 
-Create Laravel Porject:
-composer create-project --prefer-dist laravel/laravel laravelbnb
+Create Laravel Project:
+```composer create-project --prefer-dist laravel/laravel laravelbnb```
 
 
 Start Server:
@@ -27,33 +80,33 @@ Start Server:
 
 
 Install Laravel UI:
-composer require laravel/ui --dev
+```composer require laravel/ui --dev```
 
 
 Generate Scaffolding Frontend:
 // Generate basic scaffolding...
-php artisan ui bootstrap
-php artisan ui vue
-php artisan ui react
+```php artisan ui bootstrap```
+```php artisan ui vue```
+```php artisan ui react```
 
 
 
 Install required JS libraries:
-npm install
+```npm install```
 
 Bundle all stylsheets and libraries into single files for our Frontend page:
-npm run dev
+```npm run dev```
 
 (Note): If npm run dev has error, delete node modules folder, do npm install
 and then npm run dev, will fix the issue.
 
 
 Install Vue Router:
-npm install vue-router
+```npm install vue-router```
 
 
 Vue Watcher:
-npm run watch
+```npm run watch```
 
 
 
@@ -63,41 +116,41 @@ DATABASE:
 A Model Class Represents a Database Table
 
 Defining Models(m for making migrations): 
-php artisan make:model Bookable -m
-php artisan make:model Booking -m
-php artisan make:model Review -m
-php artisan make:model Address -m
+```php artisan make:model Bookable -m```
+```php artisan make:model Booking -m```
+```php artisan make:model Review -m```
+```php artisan make:model Address -m```
 
 Create Migration in DB:
-php artisan migrate
+```php artisan migrate```
 
 
 Fake Data:
 
 Installe Lagacy Factory for new Laravel Versions:
-composer require laravel/legacy-factories
+```composer require laravel/legacy-factories```
 
 Create Factory:
-php artisan make:factory BookableFactory --model=Bookable
-php artisan make:factory BookingFactory
-php artisan make:factory ReviewFactory
+```php artisan make:factory BookableFactory --model=Bookable```
+```php artisan make:factory BookingFactory```
+```php artisan make:factory ReviewFactory```
 
 Generate a Database Seeder:
-php artisan make:seeder BookablesTableSeeder
-php artisan make:seeder BookingsTableSeeder
-php artisan make:seeder ReviewsTableSeeder
-php artisan make:seeder UsersTableSeeder
+```php artisan make:seeder BookablesTableSeeder```
+```php artisan make:seeder BookingsTableSeeder```
+```php artisan make:seeder ReviewsTableSeeder```
+```php artisan make:seeder UsersTableSeeder```
 
 Run Seed (adds new data un top of exsiting data, mostly for production):
-php artisan db:seed
+```php artisan db:seed```
 
 Migrations:
-php artisan make:migration addReviewKeyToBookingsTable
-php artisan make:migration addPriceToBookablesTable
-php artisan make:migration addPriceAndAdressToBookingsTable
+```php artisan make:migration addReviewKeyToBookingsTable```
+```php artisan make:migration addPriceToBookablesTable```
+```php artisan make:migration addPriceAndAdressToBookingsTable```
 
 Refresh the DB and run all database seeds (run this only on development):
-php artisan migrate:refresh --seed
+```php artisan migrate:refresh --seed```
 
 
 
@@ -105,20 +158,20 @@ php artisan migrate:refresh --seed
 API:
 
 Get all API's:
-php artisan route:list
+```php artisan route:list```
 
 Check data in url:
 http://localhost:8000/api/bookables
 
 
 Create Controllers (Groups Http Request of the same type):
-php artisan make:controller Api/BookableController
-php artisan make:controller Api/BookableAvailabilityController --invokable
-php artisan make:controller Api/BookableReviewController --invokable
-php artisan make:controller Api/ReviewController
-php artisan make:controller Api/BookingByReviewController --invokable
-php artisan make:controller Api/BookablePriceController --invokable
-php artisan make:controller Api/CheckoutController --invokable
+```php artisan make:controller Api/BookableController```
+```php artisan make:controller Api/BookableAvailabilityController --invokable```
+```php artisan make:controller Api/BookableReviewController --invokable```
+```php artisan make:controller Api/ReviewController```
+```php artisan make:controller Api/BookingByReviewController --invokable```
+```php artisan make:controller Api/BookablePriceController --invokable```
+```php artisan make:controller Api/CheckoutController --invokable```
 
 (Controllers need to be referenced by Route in api.php)
 http://localhost:8000/api/bookables/1/availability
@@ -126,53 +179,53 @@ http://localhost:8000/api/bookables/1/availability?from=2022-08-01&to=2022-08-24
 
 
 Create Resources for fetching specific data:
-php artisan make:resource BookableIndexResource
-php artisan make:resource BookableShowResource
-php artisan make:resource BookableReviewIndexResource
-php artisan make:resource ReviewResource
-php artisan make:resource BookingByReviewShowResource
-php artisan make:resource BookingByReviewBookableShowResource
+```php artisan make:resource BookableIndexResource```
+```php artisan make:resource BookableShowResource```
+```php artisan make:resource BookableReviewIndexResource```
+```php artisan make:resource ReviewResource```
+```php artisan make:resource BookingByReviewShowResource```
+```php artisan make:resource BookingByReviewBookableShowResource```
 
 
 
 Laravel Debugger:
-composer require barryvdh/laravel-debugbar --dev
+```composer require barryvdh/laravel-debugbar --dev```
 
 
 Moment Js:
 https://momentjs.com/
-npm install moment --save 
+```npm install moment --save``` 
 
 Fontawesome:
-npm install --save-dev @fortawesome/fontawesome-free
+```npm install --save-dev @fortawesome/fontawesome-free```
 
 
 
 Global State:
 Installing VUEX:
 
-npm install vuex --save
+```npm install vuex --save```
 
 
 User Authentication:
 
 //install
-composer require laravel/sanctum
+```composer require laravel/sanctum```
 
 //vendor
-php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+```php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"```
 
-php artisan migrate
+```php artisan migrate```
 
 //Generate Auth Folder
-php artisan ui:auth
+```php artisan ui:auth```
 
 
 
 
 Deploy for Production:
 
-npm run production
+```npm run production```
 
 Apply changes to .env file:
 APP_ENV=production
